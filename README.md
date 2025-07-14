@@ -18,6 +18,7 @@
 - 따라서 사용자가 쉽게 접근할 수 있는 실시간 교제 폭력 인식 및 자동 신고 시스템을 개발하고자 함.
 <img width="909" height="394" alt="1 개요" src="https://github.com/user-attachments/assets/a19ce9d5-364e-41fd-b009-3407a914cc75" />
 
+<br>
 --
 
 - **기존 서비스와의 차별성**
