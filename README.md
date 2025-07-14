@@ -1,4 +1,4 @@
-# 철컹철컹: 이상행동 감지 기반의 교제 폭력 자동 신고 서비스
+<img width="882" height="401" alt="10  보완 서비스아키텍처" src="https://github.com/user-attachments/assets/621bb259-c57d-4e22-9d39-eac0bb1348fe" /><img width="882" height="401" alt="10  보완 서비스아키텍처" src="https://github.com/user-attachments/assets/139a277b-5297-428b-bf78-dc7d5cfa34ae" /># 철컹철컹: 이상행동 감지 기반의 교제 폭력 자동 신고 서비스
 ## 목차
   - [프로젝트 기본 정보](#프로젝트-기본-정보)
   - [프로젝트 개요](#프로젝트-개요)
@@ -16,15 +16,47 @@
 - 교제 폭력 중 가장 많이 검거된 범죄는 폭력 및 상해로, 사망에 이르는 심각한 사례도 존재함.
 - 그러나 인식 부족, 낮은 검거율, 증거 확보의 어려움 등으로 인해 피해자는 적절한 보호를 받기 어려운 상황임.
 - 따라서 사용자가 쉽게 접근할 수 있는 실시간 교제 폭력 인식 및 자동 신고 시스템을 개발하고자 함.
+<img width="909" height="394" alt="1 개요" src="https://github.com/user-attachments/assets/a19ce9d5-364e-41fd-b009-3407a914cc75" />
+- 기존 서비스와의 차별성
+<img width="837" height="387" alt="2  기존 서비스와의 차별성" src="https://github.com/user-attachments/assets/f5436a04-e3ad-4a5a-b516-2b94faea2f07" />
+- 핵심 기능
+<img width="892" height="445" alt="3 핵심기능" src="https://github.com/user-attachments/assets/dc8f37c4-e06b-4d14-8f31-87472b55d0f4" />
+- 서비스 데모
+<img width="811" height="378" alt="4  서비스 데모" src="https://github.com/user-attachments/assets/c9f55ea6-d711-4511-8519-22a5cfee8e72" />
+- 서비스 아키텍처
+- <img width="896" height="398" alt="9 서비스아키텍처" src="https://github.com/user-attachments/assets/e95ba7e4-36b1-4034-a712-f25405e253d6" />
+
 
 ## 프로젝트 설명
 목격자 없이 밀폐된 공간에서 발생하는 교제 폭력의 특성을 고려하여, 폭력 데이터를 학습한 인공지능 모델을 기반으로 실시간 영상 속 폭행을 인식하고, 사용자의 GPS 위치를 추적해 자동으로 경찰에 신고가 접수되는 시스템을 구축하고자 함.
 
-
 ## 분석 결과
-
+- 모델의 성능을 비교한 결과, LSTM 모델의 성능이 가장 높음.
+- 또한, LSTM의 train, validation, test 데이터셋의 성능차이가 가장 작은 것을 확인함.
+- 샘플 데이터의 모델을 예측한 결과, ‘일반’ 라벨의 예측은 GRU, SVM, LSTM, RandomForest 순으로 성능이 예측 신뢰도가 높음.
+- 폭행’ 라벨의 예측은 GRU, LSTM, RandomForest , SVM 순으로 성능이 예측 신뢰도가 높음.
+- 따라서 예측 신뢰도는 GRU, LSTM, RandomForest , SVM 순으로 예측 신뢰도가 높다고 판단함.
+- 결론적으로 모델 성능과 예측 신뢰도를 모두 고려했을 때, 최종 모델을 LSTM으로 선택함.
+<img width="566" height="380" alt="6  성능 비교" src="https://github.com/user-attachments/assets/a9d9dce8-31c1-4287-bc0d-74754958456e" />
+<img width="756" height="429" alt="7 모델 샘플 예측 결과" src="https://github.com/user-attachments/assets/fe1a699b-40b7-4f1b-8e59-24354ed2da27" />
+<img width="904" height="282" alt="8 최종모델그래프" src="https://github.com/user-attachments/assets/c7a21fee-7084-4543-b60c-b9bfddcb5adf" />
 
 ## 기대 효과
-
+- 애플리케이션 사용 시 폭력 행동이 감지되면 자동으로 신고가 접수되기 때문에 신고 과정이 단순화됨.
+- 촬영된 영상과 경찰 출동 기록은 애플리케이션의 ‘내 정보’에 저장되므로 피해자가 진술 번복 상황에서도 객관적인 증거 자료로 활용될 수 있음.
+- 폭력 징후를 조기에 감지하고 자동 신고까지 연결되기 때문에 중범죄를 예방할 수 있음.
 
 ## Lesson & Learned
+- 데이트 폭력은 신고 건수에 비해 검거율이 낮다는 것을 알게 됨.
+- 신고 건수에 비해 검거율이 낮은 원인으로는 ‘증거 불충분’, ‘피해자의 진술 번복’, ‘적용 혐의 복합’으로 인한 것이라는 것을 알게 됨.
+- **본선 진출 시 예선작 보완 계획**
+    1. 폭력 인식 모델 튜닝 및 개선
+        - LSTM 모델의 은닉층 크기와 레이어 수를 조정해 모델 복잡도를 조절할 계획
+        - Transformer 구조를 적용해 신체 움직임의 중요도를 반영하고 인식 성능을 강화할 예정
+    2.  음성 데이터를 활용한 폭력 음성 인식 기능 확장
+        - ‘영상 기반 폭력 행동 감지 기능’에 음성 데이터를 활용한 폭력 음성 인식 기능을 추가하여
+        감지 정확도와 실시간성 모두를 강화할 계획
+    3. 챗봇 기능으로 상담 서비스 확장
+        - 형사법 기반 챗봇 기능을 추가해 사용자가 자신의 상황에 대해 법적 대응 방향을 직접 판단할 수 있도록 돕고자 함.
+- **보완 서비스 아키텍처(본선 진출 시)**
+  <img width="882" height="401" alt="10  보완 서비스아키텍처" src="https://github.com/user-attachments/assets/cf2bac84-8599-45c4-8f09-64fd76f27af8" />
