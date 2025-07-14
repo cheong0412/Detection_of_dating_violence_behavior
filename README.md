@@ -1,4 +1,4 @@
-<img width="882" height="401" alt="10  보완 서비스아키텍처" src="https://github.com/user-attachments/assets/621bb259-c57d-4e22-9d39-eac0bb1348fe" /><img width="882" height="401" alt="10  보완 서비스아키텍처" src="https://github.com/user-attachments/assets/139a277b-5297-428b-bf78-dc7d5cfa34ae" /># 철컹철컹: 이상행동 감지 기반의 교제 폭력 자동 신고 서비스
+# 철컹철컹: 이상행동 감지 기반의 교제 폭력 자동 신고 서비스
 ## 목차
   - [프로젝트 기본 정보](#프로젝트-기본-정보)
   - [프로젝트 개요](#프로젝트-개요)
