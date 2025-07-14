@@ -17,6 +17,7 @@
 - 그러나 인식 부족, 낮은 검거율, 증거 확보의 어려움 등으로 인해 피해자는 적절한 보호를 받기 어려운 상황임.
 - 따라서 사용자가 쉽게 접근할 수 있는 실시간 교제 폭력 인식 및 자동 신고 시스템을 개발하고자 함.
 <img width="909" height="394" alt="1 개요" src="https://github.com/user-attachments/assets/a19ce9d5-364e-41fd-b009-3407a914cc75" />
+---
 
 - **기존 서비스와의 차별성**
 <img width="837" height="387" alt="2  기존 서비스와의 차별성" src="https://github.com/user-attachments/assets/f5436a04-e3ad-4a5a-b516-2b94faea2f07" />
